@@ -317,11 +317,13 @@ do
             :AddLabel("Outline color")
             :AddColorPicker("OutlineColor", { Default = self.Library.Scheme.OutlineColor })
         groupbox:AddLabel("Font color"):AddColorPicker("FontColor", { Default = self.Library.Scheme.FontColor })
+                        --[[
         groupbox:AddDropdown("FontFace", {
             Text = "Font Face",
             Default = "Code",
             Values = {"Code", "Fantasy", "Gotham", "Jura", "Roboto", "RobotoMono", "SourceSans" },
         })
+                        ]]
 
         local ThemesArray = {}
         for Name, Theme in pairs(self.BuiltInThemes) do
@@ -434,11 +436,6 @@ do
         self.Library.Options.AccentColor:OnChanged(UpdateTheme)
         self.Library.Options.OutlineColor:OnChanged(UpdateTheme)
         self.Library.Options.FontColor:OnChanged(UpdateTheme)
-        self.Library.Options.FontFace:OnChanged(function(Value)
-            self.Library:SetFont(Enum.Font[Value])
-            self.Library:UpdateColorsUsingRegistry()
-        end)
-    end
 
     function ThemeManager:CreateGroupBox(tab)
         assert(self.Library, "Must set ThemeManager.Library first!")
