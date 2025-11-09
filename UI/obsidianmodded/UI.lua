@@ -1,3 +1,4 @@
+-- removed button anim
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
@@ -3201,15 +3202,6 @@ do
                 if Button.Disabled or Button.Locked then
                     return
                 end
-                
-			local diabetes2 = Button.Base.BackgroundColor3
-			TweenService:Create(Button.Base, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-				BackgroundColor3 = Library.Scheme.AccentColor
-			}):Play()
-			task.wait(0.2)
-			TweenService:Create(Button.Base, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-				BackgroundColor3 = diabetes2
-			}):Play()
 
                 if Button.DoubleClick then
                     Button.Locked = true
