@@ -1,4 +1,4 @@
---5
+--6
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
@@ -308,7 +308,7 @@ do
             return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1]
         end)
 
-        groupbox:AddDivider()
+        --groupbox:AddDivider()
 
         groupbox:AddDropdown("ThemeManager_ThemeList", { Text = "Theme list", Values = ThemesArray, Default = 1 })
         groupbox:AddButton("Set as default", function()
@@ -322,7 +322,7 @@ do
             self:ApplyTheme(self.Library.Options.ThemeManager_ThemeList.Value)
         end)
 
-        groupbox:AddDivider()
+        --groupbox:AddDivider()
 
         groupbox:AddInput("ThemeManager_CustomThemeName", { Text = "Custom theme name" })
         groupbox:AddButton("Create theme", function()
@@ -340,7 +340,7 @@ do
             self.Library.Options.ThemeManager_CustomThemeList:SetValue(nil)
         end)
 
-        groupbox:AddDivider()
+        --groupbox:AddDivider()
 
         groupbox:AddDropdown(
             "ThemeManager_CustomThemeList",
