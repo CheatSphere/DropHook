@@ -1,4 +1,4 @@
---6
+--7
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
@@ -50,7 +50,7 @@ do
     ThemeManager.BuiltInThemes = {
         ["Default"] = {
             1,
-            { FontColor = "ffffff", MainColor = "161616", AccentColor = "ffffff", BackgroundColor = "0a0a0a", OutlineColor = "232323" },
+            { FontColor = "ffffff", MainColor = "161616", AccentColor = "c7e9ff", BackgroundColor = "0a0a0a", OutlineColor = "232323" },
         },
         ["Monokai"] = {
             2,
