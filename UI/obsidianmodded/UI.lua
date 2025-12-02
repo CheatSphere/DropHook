@@ -1,4 +1,4 @@
--- removed button anim
+-- fixed weird unloading
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
@@ -1859,7 +1859,8 @@ end
 
 function Library:Unload()
     for _, Toggle in pairs(Toggles) do
-        if Toggle.SetValue then Toggle:SetValue(false)
+        if Toggle.SetValue and Toggle.Value == true then 
+            Toggle:SetValue(false)
         end
     end
 
