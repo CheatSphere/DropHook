@@ -410,7 +410,7 @@ do
 
     function ThemeManager:CreateGroupBox(tab)
         assert(self.Library, "Must set ThemeManager.Library first!")
-        return tab:AddLeftGroupbox("Themes", "cog")
+        return tab:AddRightGroupbox("Themes", "cog")
     end
 
     function ThemeManager:ApplyToTab(tab)
