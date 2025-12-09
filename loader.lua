@@ -1,3 +1,13 @@
+--// If you're here because the script didn't let you in for some reason it's most likely because it won't function right with what you're doing (level 3 executors will NOT work)
+
+local IsMobile = game:GetService("UserInputService"):GetPlatform() == Enum.Platform.Android or game:GetService("UserInputService"):GetPlatform() == Enum.Platform.IOS --// pasted 😏
+
+if IsMobile and not getgenv().MobileYes then
+    getgenv().MobileYes = true
+    game.StarterGui:SetCore("SendNotification", {Title = "ERLChook",Text = "The script isn't tested on mobile and might be buggy, if you still want to use ERLChook just run the scritp again.",Duration = 15,})
+    return
+end
+
 ---// remove bad executor
 
 if getidentity() > 4
