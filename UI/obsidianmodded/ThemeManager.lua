@@ -1,4 +1,4 @@
--- theme changes, new default theme, and pcalled some stuff that will ban if used wrong
+-- theme changes, new default theme, and pcalled some stuff that will ban if used weird
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
