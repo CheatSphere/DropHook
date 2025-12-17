@@ -50,23 +50,23 @@ do
     ThemeManager.BuiltInThemes = {
         ["Default"] = {
             1,
-            { FontColor = "ffffff", MainColor = "1d1c1a", AccentColor = "ffddb9", BackgroundColor = "0f0e0d", OutlineColor = "2b2926" },
-        },
-        ["DefaultBlue"] = {
-            2,
-            { FontColor = "ffffff", MainColor = "1a1a1d", AccentColor = "9fbaff", BackgroundColor = "0d0d0f", OutlineColor = "26262b" },
-        },
-        ["DefaultPurple"] = {
-            3,
-            { FontColor = "ffffff", MainColor = "1c1a1d", AccentColor = "c99fff", BackgroundColor = "0e0d0f", OutlineColor = "28262b" },
-        },
-        ["DefaultRed"] = {
-            4,
-            { FontColor = "ffffff", MainColor = "1d1a1a", AccentColor = "ff9393", BackgroundColor = "0f0d0d", OutlineColor = "2b2626" },
+            { FontColor = "ffffff", MainColor = "141414", AccentColor = "f68a58", BackgroundColor = "0a0a0a", OutlineColor = "212121" },
         },
         ["OldDefault"] = {
+            2,
+            { FontColor = "ffffff", MainColor = "1d1c1a", AccentColor = "ffddb9", BackgroundColor = "0f0e0d", OutlineColor = "2b2926" },
+        },
+        ["OldDefaultBlue"] = {
+            3,
+            { FontColor = "ffffff", MainColor = "1a1a1d", AccentColor = "9fbaff", BackgroundColor = "0d0d0f", OutlineColor = "26262b" },
+        },
+        ["OldDefaultPurple"] = {
+            4,
+            { FontColor = "ffffff", MainColor = "1c1a1d", AccentColor = "c99fff", BackgroundColor = "0e0d0f", OutlineColor = "28262b" },
+        },
+        ["OldDefaultRed"] = {
             5,
-            { FontColor = "ffffff", MainColor = "161616", AccentColor = "c7e9ff", BackgroundColor = "0a0a0a", OutlineColor = "232323" },
+            { FontColor = "ffffff", MainColor = "1d1a1a", AccentColor = "ff9393", BackgroundColor = "0f0d0d", OutlineColor = "2b2626" },
         },
         ["Cherry"] = {
             6,
