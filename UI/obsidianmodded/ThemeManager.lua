@@ -1,4 +1,4 @@
--- theme changes2 (default)
+-- theme changes, new default theme, and pcalled some stuff that will ban if used wrong
 local cloneref = (cloneref or clonereference or function(instance: any)
     return instance
 end)
@@ -50,23 +50,23 @@ do
     ThemeManager.BuiltInThemes = {
         ["Default"] = {
             1,
-            { FontColor = "ffffff", MainColor = "141414", AccentColor = "f68a58", BackgroundColor = "0a0a0a", OutlineColor = "212121" },
-        },
-        ["OldDefault"] = {
-            2,
             { FontColor = "ffffff", MainColor = "1d1c1a", AccentColor = "ffddb9", BackgroundColor = "0f0e0d", OutlineColor = "2b2926" },
         },
-        ["OldDefaultBlue"] = {
-            3,
+        ["DefaultBlue"] = {
+            2,
             { FontColor = "ffffff", MainColor = "1a1a1d", AccentColor = "9fbaff", BackgroundColor = "0d0d0f", OutlineColor = "26262b" },
         },
-        ["OldDefaultPurple"] = {
-            4,
+        ["DefaultPurple"] = {
+            3,
             { FontColor = "ffffff", MainColor = "1c1a1d", AccentColor = "c99fff", BackgroundColor = "0e0d0f", OutlineColor = "28262b" },
         },
-        ["OldDefaultRed"] = {
-            5,
+        ["DefaultRed"] = {
+            4,
             { FontColor = "ffffff", MainColor = "1d1a1a", AccentColor = "ff9393", BackgroundColor = "0f0d0d", OutlineColor = "2b2626" },
+        },
+        ["OldDefault"] = {
+            5,
+            { FontColor = "ffffff", MainColor = "161616", AccentColor = "c7e9ff", BackgroundColor = "0a0a0a", OutlineColor = "232323" },
         },
         ["Cherry"] = {
             6,
@@ -194,7 +194,9 @@ do
     end
 
     function ThemeManager:SaveDefault(theme)
+        pcall(function()
         writefile(self.Folder .. "/themes/default.txt", theme)
+        end)
     end
 
     function ThemeManager:SetDefaultTheme(theme)
@@ -229,6 +231,7 @@ do
     end
 
     function ThemeManager:SaveCustomTheme(file)
+        pcall(function()
         if file:gsub(" ", "") == "" then
             self.Library:Notify("Invalid file name for theme (empty)", 3)
             return
@@ -240,6 +243,7 @@ do
         end
 
         writefile(self.Folder .. "/themes/" .. file .. ".json", HttpService:JSONEncode(theme))
+    end)
     end
 
     function ThemeManager:Delete(name)
@@ -261,7 +265,9 @@ do
     end
 
     function ThemeManager:ReloadCustomThemes()
-        local list = listfiles(self.Folder .. "/themes")
+        local success, list = pcall(function()
+            return listfiles(self.Folder .. "/themes")
+        end)
 
         local out = {}
         for i = 1, #list do
