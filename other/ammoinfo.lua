@@ -1,3 +1,5 @@
+-- last updated 2026/8/21
+
 _G.AmmoInfo = {
     ["M249"] = "5.56x45mm",
     ["PPSH 41"] = "5.56x45mm",
